@@ -72,41 +72,41 @@ export default function Home() {
   );
 }
 
-export const getServerSideProps = async (context) => {
-  console.log(context);
-  const client = new ApolloClient({
-    uri: "http://localhost:1337/graphql",
-    cache: new InMemoryCache(),
-  });
+// export const getServerSideProps = async (context) => {
+//   console.log(context);
+//   const client = new ApolloClient({
+//     uri: "http://localhost:1337/graphql",
+//     cache: new InMemoryCache(),
+//   });
 
-  const { data } = await client.query({
-    query: gql`
-      query getalldata {
-        homes {
-          data {
-            attributes {
-              heading {
-                paragraph
-              }
-              gridDetails {
-                gridHeading
-                gridDescription
-              }
-              footerdata {
-                details
-              }
-            }
-          }
-        }
-      }
-    `,
-  });
+//   const { data } = await client.query({
+//     query: gql`
+//       query getalldata {
+//         homes {
+//           data {
+//             attributes {
+//               heading {
+//                 paragraph
+//               }
+//               gridDetails {
+//                 gridHeading
+//                 gridDescription
+//               }
+//               footerdata {
+//                 details
+//               }
+//             }
+//           }
+//         }
+//       }
+//     `,
+//   });
 
-  return {
-    props: {
-      dataOne: data.homes.data[0].attributes.heading,
-      dataTwo: data.homes.data[0].attributes.gridDetails,
-      dataThree : data.homes.data[0].attributes.footerdata
-    },
-  };
-};
+//   return {
+//     props: {
+//       dataOne: data.homes.data[0].attributes.heading,
+//       dataTwo: data.homes.data[0].attributes.gridDetails,
+//       dataThree : data.homes.data[0].attributes.footerdata
+//     },
+//   };
+// };
