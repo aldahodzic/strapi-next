@@ -3,10 +3,10 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
-export default function Home({dataOne, dataTwo, dataThree}) {
-  console.log("Data One : " , dataOne);
-  console.log("Data Two : " , dataTwo);
-  console.log("Data Three : " , dataThree);
+export default function Home() {
+  // console.log("Data One : " , dataOne);
+  // console.log("Data Two : " , dataTwo);
+  // console.log("Data Three : " , dataThree);
   return (
     <div className={styles.container}>
       <Head>
